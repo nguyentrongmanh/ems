@@ -1,0 +1,26 @@
+<div class="c31-bay-static">
+    <table>
+        <tbody>
+            <tr>
+                <td>U</td>
+                <td>35KV</td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td>35KV</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>35KV</td>
+            </tr>
+            <tr>
+                <td>Q</td>
+                <td>35KV</td>
+            </tr>
+            <tr>
+                <td>Cos</td>
+                <td>35KV</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

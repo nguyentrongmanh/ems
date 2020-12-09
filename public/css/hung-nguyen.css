@@ -1,0 +1,114 @@
+.hung-nguyen-static {
+    display: flex;
+}
+
+.hung-nguyen-main-static {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.hung-nguyen-main-static.static td {
+    font-size: 20px !important;
+}
+
+.hung-nguyen-main-static .static-value {
+    width: 85px;
+}
+
+.connect-line-one {
+    height: 55px;
+    width: 1px;
+    position: absolute;
+    left: -65px;
+    bottom: 0px;
+    background: yellow;
+}
+
+.connect-line-two {
+    width: 85px;
+    height: 1px;
+    position: absolute;
+    left: -149px;
+    bottom: 54px;
+    background: yellow;
+}
+
+.connect-line-three {
+    width: 1px;
+    height: 60px;
+    position: absolute;
+    right: -1px;
+    bottom: -2px;
+    background: #77e5ed;
+}
+
+.connect-line-four {
+    width: 168px;
+    height: 1px;
+    position: absolute;
+    left: -1px;
+    bottom: 0px;
+    background: #77e5ed;
+}
+
+
+#ds131-3 {
+    position: absolute;
+    left: -9px;
+    top: 5px;
+}
+
+#eb-35 {
+    position: absolute;
+    right: -72px;
+    top: 25px;
+}
+
+#cb-131 {
+    position: absolute;
+    right: -53px;
+    top: 65px;
+}
+
+
+#eb-15 {
+    position: absolute;
+    right: -72px;
+    top: 95px;
+}
+
+#ds131-1 {
+    position: absolute;
+    right: -53px;
+    top: 125px;
+}
+
+#cb-112 {
+    position: absolute;
+    left: -9px;
+    top: 40px;
+}
+
+#eb-112-15 {
+    position: absolute;
+    left: 7px;
+    top: 80px;
+}
+
+#ds112-1 {
+    position: absolute;
+    left: -9px;
+    top: 120px;
+}
+
+#eb-112-25 {
+    position: absolute;
+    right: -72px;
+    top: 80px;
+}
+
+#ds112-2 {
+    position: absolute;
+    right: -53px;
+    top: 120px;
+}

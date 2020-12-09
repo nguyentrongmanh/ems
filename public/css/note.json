@@ -1,0 +1,116 @@
+{
+    "sc": "mã trạm",
+    "type": "loại bản tin",
+    "id": "tên thiết bị_mã thiết bị",
+    "status": "0/1" 
+},
+
+// Máy cắt
+{
+    "sc": "mã trạm",// vd TBAHN
+    "id": "CB_171",
+    "type": "loại bản tin",
+    "status": "1" 
+},
+
+// dao cách ly
+{
+    "sc": "mã trạm", // vd TBABA
+    "id": "DS_131-1",
+    "type": "loại bản tin",
+    "status": "1" 
+}
+
+// dao tiếp địa
+{
+    "sc": "mã trạm",
+    "id": "EB_171-14",
+    "type": "loại bản tin",
+    "status": "1" 
+}
+
+
+// bản tin ngăn lộ
+{
+    "sc": "BA",
+    "id": "TBABA_ND",
+    "type": "4",
+    "kv": "20",
+    "a": "20",
+    "mw": "20",
+    "mvar": "20",
+    "cos": "20"
+}
+
+
+// bản tin thanh cái chính
+{
+    "sc": "BA",
+    "id": "BB_110",
+    "type": "5",
+    "kv": "110",
+    "a": "2",
+    "mw": "3",
+    "mvar": "32",
+    "cosc11": "12",
+    "cosc12" : "13",
+    "temc11" : "31",
+    "temc12" : "21"
+}
+
+
+// bản tin thanh cái phụ
+{
+    "sc": "BA",
+    "id": "TBABA_BB_35_C31",
+    "type": "6",
+    "kv": "5",
+    "a": "5",
+    "mw": "5",
+    "mvar": "5",
+    "cos": "5",
+    "tem" : "5"
+}
+
+
+
+// bản tin máy biến áp
+{
+    "sc": "",
+    "id": "MBA_110",
+    "type": "7",
+    "kv1": "2",
+    "a1": "2",
+    "mw1": "2",
+    "mvar1": "2",
+    "cos1": "2",
+    "tem1" : "2",
+    "kv2": "",
+    "a2": "",
+    "mw2": "",
+    "mvar2": "",
+    "cos2": "",
+    "tem2" : "",
+    "kv3": "",
+    "a3": "",
+    "mw3": "",
+    "mvar3": "",
+    "cos3": "",
+    "tem3" : "",
+}
+
+
+type = {
+    1: "máy cắt",
+    2: "dao cách ly",
+    3: "dao tiếp địa",
+    4: "ngăn lộ",
+    5: "thanh cái chính",
+    6: "thanh cái phụ",
+    7: "máy biến áp",
+}
+
+
+
+
+

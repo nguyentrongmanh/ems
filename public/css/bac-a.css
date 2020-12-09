@@ -1,0 +1,105 @@
+.tranformer-image {
+    width: 100%;
+}
+
+.background-black {
+    background-color: black !important;
+}
+
+.background-white {
+    background-color: white !important;
+}
+
+
+.bac-a-bottom {
+    height: 68%;
+}
+
+.bac-a-bottom-bay {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.bac-a-yellow-left::after {
+ content: "";
+ position: absolute;
+ width: 120px;
+ height: 1px;
+ right: 0;
+ bottom: 20px;
+ background-color: red;
+}
+
+.bac-a-bay-static {
+    margin-left: 75px !important;
+}
+
+.bac-a-main-static {
+    margin-left: 75px;
+    margin-top: 75px;
+}
+
+.bac-a-main-static.static td {
+    font-size: 20px !important;
+}
+
+.bac-a-main-static .static-value {
+    width: 85px;
+}
+
+.bac-a-main-static-group {
+    display: flex;
+    justify-content: flex-end;
+    width: 65%;
+
+}
+
+.busbar-label {
+    position: absolute;
+    bottom: -20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+    left: -65px;
+}
+
+.bac-a-blue-busbar-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #77e5ed;
+    margin-left: 85px;
+}
+
+
+
+#CS1T1 {
+	top: 185px;
+    left: -55px;
+}
+
+#CS1T1 .electric-item-label {
+	margin-bottom: 2px !important;
+}
+
+#CS3T1 {
+	top: 13px;
+	left: -55px;
+}
+
+#CS4T1 {
+	top: -38px;
+	left: 65px;
+	transform: rotate(-90deg);
+}
+
+#CS4T1 .fuse-top {
+	height: 10px !important;
+}
+
+
+#CS0T1 {
+    transform: rotate(-90deg);
+    bottom: -45px;
+    right: 50px;
+}
