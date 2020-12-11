@@ -13,4 +13,5 @@ final class UserRole extends Enum
 {
     const USER = 0;
     const ADMIN = 1;
+    const SUPPER_ADMIN = 2;
 }

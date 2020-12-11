@@ -6,9 +6,9 @@
 <div class="page-wrapper">
 	<div class="mba-container">
         <div class="control-page-header">
-            <div class="background-white box-wraper">110KV BUSBAR</div>
+            <div class="background-white box-wraper">C31 BUSBAR 22KV (BAC A SUBSTATION)</div>
         </div>
-        <div class="row" style="margin-right: 0px;margin-left: 0px;">
+        <div class="row padding-x-5" style="margin-right: 0px;margin-left: 0px;">
             <div class="background-black box-wraper min-height-350" style="height: calc(100% - 5px);">
                 <div style="padding-left: 20px; padding-top: 10px;">
                     <div class="bac-a-bottom-bay">

@@ -60,24 +60,24 @@
 			</div>
 			<fieldset class="form-group">
 				<div class="row">
-					<legend class="col-form-label col-sm-2 pt-0">Role</legend>
+					<label class="col-form-label col-sm-2 pt-0">Role</label>
 					<div class="col-sm-10">
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="role" id="user" value="0" checked>
 							<label class="form-check-label" for="user">
-								Nhân viên trạm
+								USER
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="role" id="user" value="1">
 							<label class="form-check-label" for="user">
-								Trưởng trạm
+								ADMIN
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="role" id="admin" value="2">
 							<label class="form-check-label" for="admin">
-								Superadmin
+								SUPPER ADMIN
 							</label>
 						</div>
 					</div>

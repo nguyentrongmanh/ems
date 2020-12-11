@@ -56,4 +56,14 @@ class HungNguyenController extends Controller
     {
         return view('hungnguyen.busbarc31');
     }
+
+    public function busbarc41()
+    {
+        return view('hungnguyen.busbarc41');
+    }
+
+    public function busbarc42()
+    {
+        return view('hungnguyen.busbarc42');
+    }
 }

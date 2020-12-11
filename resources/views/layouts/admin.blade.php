@@ -8,165 +8,175 @@
 	<meta name="author" content="">
 
 	<title>SB Admin 2 - Dashboard</title>
-	<link href="{{ url('css/fontawesome.min.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ url('css/quill.css') }}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<link
-		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-		rel="stylesheet">
-	<link rel="stylesheet" type="text/css"
-		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="{{ url('css/admin.css') }}" rel="stylesheet">
-	<script src="{{ asset('js/jquery.min.js') }}"></script>
-	<script src="{{ url('js/quill.js') }}"></script>
-	<script src="{{ url('js/sweetalert.min.js') }}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{ url('plugins/fontawesome-free/css/all.min.css') }}">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- Tempusdominus Bbootstrap 4 -->
+	<link rel="stylesheet" href="{{ url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+	<!-- iCheck -->
+	<link rel="stylesheet" href="{{ url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+	<!-- JQVMap -->
+	<link rel="stylesheet" href="{{ url('plugins/jqvmap/jqvmap.min.css') }}">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="{{ url('dist/css/adminlte.css') }}">
+	<!-- overlayScrollbars -->
+	<link rel="stylesheet" href="{{ url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+	<!-- Daterange picker -->
+	<link rel="stylesheet" href="{{ url('plugins/daterangepicker/daterangepicker.css') }}">
+	<!-- summernote -->
+	<link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.css') }}">
+	<!-- Google Font: Source Sans Pro -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+	<script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
+	<!-- jQuery UI 1.11.4 -->
+	<script src="{{ url('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+	<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+	<script>
+	$.widget.bridge('uibutton', $.ui.button)
+	</script>
+	<!-- Bootstrap 4 -->
+	<script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<!-- ChartJS -->
+	<script src="{{ url('plugins/chart.js/Chart.min.js') }}"></script>
+	<!-- Sparkline -->
+	<script src="{{ url('plugins/sparklines/sparkline.js') }}"></script>
+	<!-- JQVMap -->
+	<script src="{{ url('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+	<script src="{{ url('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+	<!-- jQuery Knob Chart -->
+	<script src="{{ url('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+	<!-- daterangepicker -->
+	<script src="{{ url('plugins/moment/moment.min.js') }}"></script>
+	<script src="{{ url('plugins/daterangepicker/daterangepicker.js') }}"></script>
+	<!-- Tempusdominus Bootstrap 4 -->
+	<script src="{{ url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+	<!-- Summernote -->
+	<script src="{{ url('plugins/summernote/summernote-bs4.min.js') }}"></script>
+	<!-- overlayScrollbars -->
+	<script src="{{ url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+	<!-- AdminLTE App -->
+	<script src="{{ url('dist/js/adminlte.js') }}"></script>
+	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+	<script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="{{ url('dist/js/demo.js') }}"></script>
 	<script>
 		var baseLaravelUrl = "{{ url('/') }}"
 	</script>
-	<link rel="stylesheet prefetch" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
-
 </head>
-
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
 	<div id="wrapper">
-		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-				<div class="sidebar-brand-icon">
-					@php
-					$user = Auth::user()
-					@endphp
-					<img src="{{ $user->getAvatarUrl() }}" class="admin-small-avatar" />
-				</div>
-				<div class="sidebar-brand-text mx-3">Admin</div>
-			</a>
-			<hr class="sidebar-divider my-0">
-			<li class="nav-item active">
-				<a class="nav-link" href="{{ route('admin-home') }}">
-					<i class="fas fa-fw fa-users"></i>
-					<span>Người dùng</span></a>
-			</li>
-			<hr class="sidebar-divider">
-			<li class="nav-item active">
-				<a class="nav-link" href="{{ route('index-classes') }}">
-					<i class="fas fa-fw fa-archway"></i>
-					<span>Khí cụ</span></a>
-			</li>
-			<hr class="sidebar-divider">
-			<li class="nav-item active">
-				<a class="nav-link" href="{{ route('index-majors') }}">
-					<i class="fas fa-fw fa-bookmark"></i>
-					<span>Máy biến áp</span></a>
-			</li>
-			<hr class="sidebar-divider">
-			<li class="nav-item active">
-				<a class="nav-link" href="{{ url('/logout') }}">
-					<i class="fas fa-fw fa-sign-out-alt"></i>
-					<span>Logout</span></a>
-			</li>
-			<hr class="sidebar-divider d-none d-md-block">
-			<div class="text-center d-none d-md-inline">
-				<button class="rounded-circle border-0 home" id="sidebarToggle"></button>
-			</div>
-
-		</ul>
-		<div id="content-wrapper" class="d-flex flex-column">
-
-			<!-- Main Content -->
-			<div id="content">
-				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-					<!-- Sidebar Toggle (Topbar) -->
-					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-						<i class="fa fa-bars"></i>
-					</button>
-					<!-- Topbar Search -->
-					<form
-						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-						<div class="input-group">
-							<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-								aria-label="Search" aria-describedby="basic-addon2">
-							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">
-									<i class="fas fa-search fa-sm"></i>
-								</button>
-							</div>
-						</div>
-					</form>
-				</nav>
-				@yield('content')
-			</div>
-		</div>
-</body>
-<script language="JavaScript">
-		const MqttDataType = {
-			circuitBreaker: 1,
-			disconnectorSwitch: 2,
-			earthBreaker: 3,
-			bay: 4,
-			mainBusBar: 5,
-			busBar: 6,
-			transformer: 7
-		}
-		client = new Paho.MQTT.Client("soldier.cloudmqtt.com", 36094, "xxxxxxx");
-		client.onConnectionLost = onConnectionLost;
-		client.onMessageArrived = onMessageArrived;
-
-		client.connect({
-			useSSL: true,
-			userName : "adessils",
-			password : "7CSAYPN6-BsG",
-			onFailure:doFail,
-			onSuccess:onConnect,
-			mqttVersion: 3
-		});
-		function doFail(e){
-			console.log(e);
-		}
-
-		function onConnect() {
-			console.log("connected")
-			message = new Paho.MQTT.Message("xxxx");
-			message.destinationName = "cloudmqtt";
-			client.send(message);
-		}
-
-		function onConnectionLost(responseObject) {
-		  if (responseObject.errorCode !== 0) {
-			console.log("onConnectionLost:"+responseObject.errorMessage);
-		  }
-		}
-
-		function onMessageArrived(message) {
-			console.log(message)
-		}
-
-
-
-
-		let sendMessage = () => {
-			var content = {
-				sc: "",
-				id: "MBA_110",
-				type: 7,
-				kv1: "2",
-				a1: "2",
-				mw1: "2",
-				mvar1: "2",
-				cos1: "2",
-				tem1 : "2",
-				kv2: "",
-			};
-			message = new Paho.MQTT.Message(JSON.stringify(content));
-			message.destinationName = "Received";
-			client.send(message);
-		}
-		let myVar = setInterval(sendMessage, 4000);
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+			  <li class="nav-item">
+				<a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+			  </li>
+			  <li class="nav-item d-none d-sm-inline-block">
+				<a href="index3.html" class="nav-link">Home</a>
+			  </li>
+			  <li class="nav-item d-none d-sm-inline-block">
+				<a href="#" class="nav-link">Contact</a>
+			  </li>
+			</ul>
 		
-	</script>
+			<!-- SEARCH FORM -->
+			<form class="form-inline ml-3">
+			  <div class="input-group input-group-sm">
+				<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+				<div class="input-group-append">
+				  <button class="btn btn-navbar" type="submit">
+					<i class="fas fa-search"></i>
+				  </button>
+				</div>
+			  </div>
+			</form>
+		
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+					<i class="fas fa-th-large"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		  <!-- /.navbar -->
+		
+		  <!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+			<a href="index3.html" class="brand-link">
+			  <img src="{{ url('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+				   style="opacity: .8">
+			  <span class="brand-text font-weight-light">AdminLTE 3</span>
+			</a>
+		
+			<!-- Sidebar -->
+			<div class="sidebar">
+			  <!-- Sidebar user panel (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="image">
+					<img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+					</div>
+					<div class="info">
+					<a href="#" class="d-block">Alexander Pierce</a>
+					</div>
+				</div>
+		
+			  	<!-- Sidebar Menu -->
+			  	<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item">
+						<a href="{{ url('admin/') }}" class="nav-link">
+							<i class="fas fa-users mr-2"></i>
+							<p>
+								Users manage
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="pages/gallery.html" class="nav-link">
+						<i class="nav-icon far fa-image"></i>
+						<p>
+							Gallery
+						</p>
+						</a>
+					</li>
+					</ul>
+			  	</nav>
+			  <!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1 class="m-0 text-dark">Dashboard</h1>
+						</div><!-- /.col -->
+						{{-- <div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Dashboard v1</li>
+							</ol>
+						</div><!-- /.col --> --}}
+					</div><!-- /.row -->
+				</div><!-- /.container-fluid -->
+			</div>
+			<!-- /.content-header -->
+			<!-- Main content -->
+			<section class="content">
+				<div class="container-fluid">
+				@yield('content')
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
 
 <script>
 	

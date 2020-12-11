@@ -753,4 +753,6 @@
 	</div>
 </div>
 
+@include('elements.hungnguyen-button-group')
+
 @endsection

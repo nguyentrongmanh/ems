@@ -31,14 +31,19 @@ Route::get('/change-password', 'HomeController@getPassword')->name('change-passw
 	->middleware('auth');
 Route::post('/change-password', 'HomeController@changePassword')->name('change-password')
 	->middleware('auth');
-Route::get('/class/register', 'HomeController@register')->name('class-register')
-	->middleware('auth');
 Route::get("/logout", "Auth\LoginController@logout");
 
 Route::get('bac-a/c11', 'BacAController@busbarc11');
 Route::get('bac-a/c31', 'BacAController@busbarc31');
 Route::get('bac-a/c12', 'BacAController@busbarc12');
 Route::get('bac-a/tranformer', 'BacAController@tranformer');
+
+Route::get('hung-nguyen/c11', 'HungNguyenController@busbarc11');
+Route::get('hung-nguyen/c31', 'HungNguyenController@busbarc31');
+Route::get('hung-nguyen/c41', 'HungNguyenController@busbarc41');
+Route::get('hung-nguyen/c42', 'HungNguyenController@busbarc42');
+Route::get('hung-nguyen/c12', 'HungNguyenController@busbarc12');
+Route::get('hung-nguyen/tranformer', 'HungNguyenController@tranformer');
 Route::middleware('auth')->group(function () {
 	Route::get('tba/hung-nguyen', 'HomeController@hungNguyen')->name('hung-nguyen-index');
 	Route::get('tba/bac-a', 'HomeController@bacA')->name('bac-a-index');

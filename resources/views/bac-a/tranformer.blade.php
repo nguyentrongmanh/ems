@@ -18,65 +18,94 @@
                             <div class="voltage-condition-value">ALARM</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
+                            <div class="voltage-condition-lable">MV WINDING</div>
+                            <div class="voltage-condition-value">ALARM</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">LV WINDING</div>
                             <div class="voltage-condition-value">ALARM</div>
                         </div>
                         <div class="voltage-condition-item">
                             <div class="voltage-condition-lable">HV WINDING</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">MV WINDING</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">LV WINDING</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">OIL TRANSF</div>
+                            <div class="voltage-condition-value">LOW</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">OIL OLTC</div>
+                            <div class="voltage-condition-value">LOW</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">OIL TEMP</div>
                             <div class="voltage-condition-value">ALARM</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
+                            <div class="voltage-condition-lable">OIL TRANSF</div>
+                            <div class="voltage-condition-value">HIGH</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">OIL OLTC</div>
+                            <div class="voltage-condition-value">HIGH</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">OIL TEMP</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item">
+                            <div class="voltage-condition-lable">RELAY GAS</div>
                             <div class="voltage-condition-value">ALARM</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">OLTC PRESSURE</div>
+                            <div class="voltage-condition-value">TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">OLTC OIL FOLOW</div>
+                            <div class="voltage-condition-value">TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">RELAY GAS</div>
+                            <div class="voltage-condition-value">TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">OLTC PROGRESS</div>
+                            <div class="voltage-condition-value">FAILURE</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">VALE PRESSURE</div>
+                            <div class="voltage-condition-value">TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">FAN SYSTEM</div>
+                            <div class="voltage-condition-value">FAILURE</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">FAN SUNPPLY</div>
+                            <div class="voltage-condition-value">FAILURE</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">PRESSURE</div>
+                            <div class="voltage-condition-value">TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">AC SUPPLY</div>
+                            <div class="voltage-condition-value">FAILURE</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">DC SUPPLY</div>
+                            <div class="voltage-condition-value">FAILURE</div>
                         </div>
-                        <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
-                        </div>
-                        <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -97,51 +126,45 @@
                         <tbody>
                             <tr>
                                 <td class="unit">Voltage(KV)</td>
-                                <td class="value">110</td>
-                                <td class="value">35</td>
-                                <td class="value">22</td>
+                                <td class="value">110.02 KV</td>
+                                <td class="value">35.08 KV</td>
+                                <td class="value">22.01 KV</td>
                             </tr>
                             <tr>
                                 <td class="unit">AMPERAGE</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
+                                <td class="value">99.72 A</td>
+                                <td class="value">157.34 A</td>
+                                <td class="value">243.42 A</td>
                             </tr>
                             <tr>
                                 <td class="unit">ACTIVE POWER</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
+                                <td class="value">17.98 MW</td>
+                                <td class="value">9.20 MW</td>
+                                <td class="value">8.82 MW</td>
                             </tr>
                             <tr>
                                 <td class="unit">REACTIVE POWER</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
+                                <td class="value">5.91 MVAr</td>
+                                <td class="value">3.00 MVAr</td>
+                                <td class="value">2.94 MVAr</td>
                             </tr>
                             <tr>
                                 <td class="unit">POWER</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
+                                <td class="value">18.92 MVA</td>
+                                <td class="value">10.00 MVA</td>
+                                <td class="value">9.33 MVA</td>
                             </tr>
                             <tr>
                                 <td class="unit">FACTOR</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
+                                <td class="value">0.945</td>
+                                <td class="value">0.950</td>
+                                <td class="value">0.950</td>
                             </tr>
                             <tr>
                                 <td class="unit">FREQUENCY</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                            </tr>
-                            <tr>
-                                <td class="unit">TEMPRATURE</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
-                                <td class="value">110</td>
+                                <td class="value">49.98</td>
+                                <td class="value">49.98</td>
+                                <td class="value">49.98</td>
                             </tr>
                         </tbody>
                     </table>
@@ -154,28 +177,22 @@
                     <h5 class="box-title">PROTECTION</h5>
                     <div class="voltage-condition">
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">GENERAL TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">GROUND TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">DIFF TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">PHASE A TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">PHASE B TRIP</div>
                         </div>
                         <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">HV WINDING</div>
-                            <div class="voltage-condition-value">ALARM</div>
+                            <div class="voltage-condition-lable">PHASE C TRIP</div>
                         </div>
                     </div>
                 </div>
