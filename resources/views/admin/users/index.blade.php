@@ -92,7 +92,7 @@
 						<td>{{ $user->name }}</td>
 						<td>{{ $user->email }}</td>
 						<td>{{ $user->phone }}</td>
-						<td>{{ $user->role == 1  ? __("TEACHER") : __("STUDENT")}}</td>
+						<td>{{ $user->role == 1  ? __("ADMIN") : __("USER")}}</td>
 						<th class="w-100">{{ $user->getFormatCreated() }}</td>
 						<td style="width: 50px">
 							<div class="dropdown">

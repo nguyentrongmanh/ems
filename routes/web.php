@@ -61,6 +61,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 	Route::get('/users/detail/{id}', 'Admin\UsersController@detail')->name("user-detail");
 	Route::get('/users/upload', 'Admin\UsersController@getUpload')->name("user-upload");
 	Route::post('/users/upload', 'Admin\UsersController@postUpload')->name("user-upload");
+
+
+	Route::get('/tranformer-static', 'Admin\TranformerStaticsController@index')->name("admin-tranformer");
+	Route::get('/report', 'Admin\ReportsController@index')->name("admin-report");
 	//classes
 	Route::get('/classes', 'Admin\ClassesController@index')->name("index-classes");
 	Route::get('/classes/add', 'Admin\ClassesController@getAdd')->name("class-add");

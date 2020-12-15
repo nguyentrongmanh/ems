@@ -137,10 +137,18 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="pages/gallery.html" class="nav-link">
+						<a href="{{ url('admin/tranformer-static') }}" class="nav-link">
 						<i class="nav-icon far fa-image"></i>
 						<p>
-							Gallery
+							Tranformer Statics
+						</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="{{ url('admin/report') }}" class="nav-link">
+						<i class="nav-icon far fa-image"></i>
+						<p>
+							Report
 						</p>
 						</a>
 					</li>

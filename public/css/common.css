@@ -4,8 +4,22 @@
 	width: 100%;
 }
 
+.table-search {
+    margin-top: -5px;
+    width: 150px;
+    margin-left: 15px;
+}
+
+.text-center {
+	text-align: center;
+}
+
 .min-width-90 {
 	min-width: 90px !important;
+}
+
+.width-70 {
+	width: 70px !important;
 }
 
 .padding-x-5 {

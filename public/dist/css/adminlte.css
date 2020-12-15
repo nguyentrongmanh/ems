@@ -31511,3 +31511,14 @@ img#drop {
 .search-select {
   margin: 0px 10px;
 }
+
+.table-search {
+  width: 75%;
+  margin-left: 15px;
+}
+
+
+.report-table {
+  max-height: 700px;
+  overflow-y: auto;
+}
