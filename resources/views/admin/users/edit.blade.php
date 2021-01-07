@@ -16,6 +16,9 @@
 					<input type="text" class="form-control" readonly value="{{ $user->email }}" name="email"
 						placeholder="email">
 				</div>
+				@error('email')
+					<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Name</label>
@@ -32,34 +35,6 @@
 				<div class="col-sm-10">
 					<input type="text" class="form-control" value="{{ $user->address }}" name="address"
 						placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row is-student">
-				<label class="col-sm-2 col-form-label">
-					Class
-				</label>
-				<div class="col-sm-10">
-					<select class="form-control" name="class_id">
-						@foreach ($classes as $class)
-						@php
-							$selected = '';
-							if($class->id == $user->class_id) // Any Id
-							{
-							$selected = 'selected';
-							}
-						@endphp
-						<option value="{{ $class->id }}" {{$selected}}>
-							{{ $class->name  }}
-						</option>
-						@endforeach
-					</select>
-				</div>
-			</div>
-			<div class="form-group row is-student">
-				<label class="col-sm-2 col-form-label">Student Code</label>
-				<div class="col-sm-5">
-					<input type="number" class="form-control" value="{{ $user->mssv }}" name="mssv"
-						placeholder="mssv">
 				</div>
 			</div>
 			<div class="form-group row">
@@ -100,14 +75,21 @@
 							<input class="form-check-input" type="radio" name="role" id="user" value="0"
 								{{ $user->role == 0 ? __("checked") : null }}>
 							<label class="form-check-label" for="user">
-								STUDENT
+								USER
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="role" id="admin" value="1"
 								{{ $user->role == 1 ? __("checked") : null }}>
 							<label class="form-check-label" for="admin">
-								TEACHER
+								ADMIN
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="role" id="admin" value="2"
+								{{ $user->role == 2 ? __("checked") : null }}>
+							<label class="form-check-label" for="admin">
+								SUPER ADMIN
 							</label>
 						</div>
 					</div>

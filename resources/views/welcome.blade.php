@@ -18,13 +18,41 @@
     });
 </script>
 
-<div class="page-wrapper">
-    <div class="row menu-page">
-        <div class="col-6 menu-page-button-container">
-            <a href="{{ url('tba/hung-nguyen') }}" class="menu-page-button">Hưng Nguyên</a>
+<div class="welcome-wrapper">
+    <div class="row" style="margin: 0px !important;">
+        <div class="col-6 ">
+            <div class="welcome-substation-container">
+                <a href="{{ url('tba/hung-nguyen') }}">
+                    <img class="substation-logo" src="{{ url('image/substation-logo.PNG') }}" />
+                    <div class="substation-name">Hưng Nguyên</div>
+                </a>
+            </div>
         </div>
-        <div class="col-6 menu-page-button-container">
-            <a href="{{ url('tba/bac-a') }}" class="menu-page-button">Bắc Á</a>
+        <div class="col-6">
+            <div class="welcome-substation-container">
+                <a href="{{ url('tba/bac-a') }}">
+                    <img class="substation-logo" src="{{ url('image/substation-logo.PNG') }}" />
+                    <div class="substation-name">Bắc Á</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row"  style="margin: 0px !important;">
+        <div class="col-6 ">
+            <div class="welcome-substation-container">
+                <a href="{{ url('tba/hung-nguyen') }}">
+                    <img class="substation-logo" src="{{ url('image/substation-logo.PNG') }}" />
+                    <div class="substation-name"> Nghĩa Đàn (E15-2)</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="welcome-substation-container">
+                <a href="{{ url('tba/bac-a') }}">
+                    <img class="substation-logo" src="{{ url('image/substation-logo.PNG') }}" />
+                    <div class="substation-name">Quỳ Hợp (E15-3)</div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

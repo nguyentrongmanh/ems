@@ -31522,3 +31522,12 @@ img#drop {
   max-height: 700px;
   overflow-y: auto;
 }
+
+.evn-text {
+  color: #6d6dff;
+  font-weight: bold;
+}
+
+.evn-text span {
+  color: red !important;
+}

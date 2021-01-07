@@ -34,7 +34,7 @@
 </head>
 
 <body>
-{{-- <div id="js-preloader" class="js-preloader">
+<div id="js-preloader" class="js-preloader">
 	<div class="preloader-inner">
 		<span class="dot"></span>
 		<div class="dots">
@@ -43,7 +43,7 @@
 			<span></span>
 		</div>
 	</div>
-</div> --}}
+</div>
 	<script language="JavaScript">
         function addData(chart, label, data) {
             chart.data.labels.push(label);
@@ -139,6 +139,27 @@
 		  if (responseObject.errorCode !== 0) {
 			console.log("onConnectionLost:"+responseObject.errorMessage);
 		  }
+		}
+		const updateBusBarStatic = (data) => {
+			let staticTableId = "#" + data.id
+			$(staticTableId).find(".kv-value").html(data.kv);
+			$(staticTableId).find(".a-value").html(data.a);
+			$(staticTableId).find(".mw-value").html(data.mw);
+			$(staticTableId).find(".mvar-value").html(data.mvar);
+			$(staticTableId).find(".mva-value").html(data.mva);
+			$(staticTableId).find(".cos-value").html(data.cos);
+			$(staticTableId).find(".temp-value").html(data.tem);
+			$(staticTableId).find(".freq-value").html(data.freq);
+		}
+
+		const updateBayStatic = (data) => {
+			let staticTableId = "#" + data.id
+			$(staticTableId).find(".kv-value").html(data.kv);
+			$(staticTableId).find(".a-value").html(data.a);
+			$(staticTableId).find(".mw-value").html(data.mw);
+			$(staticTableId).find(".mvar-value").html(data.mvar);
+			$(staticTableId).find(".cos-value").html(data.cos);
+			$(staticTableId).find(".freq-value").html(data.freq);
 		}
 
 		function onMessageArrived(message) {

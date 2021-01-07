@@ -64,35 +64,71 @@
 
 
 
-		let sendMessage = () => {
-			var content = {
+		// let sendMessage = () => {
+		// 	var content = {
+		// 		sc: "",
+		// 		id: "MBA_110",
+		// 		type: 7,
+		// 		kv1: Math.floor(Math.random() * (22 - 20 + 1)) + 20,
+		// 		a1: Math.floor(Math.random() * (15 - 13 + 1)) + 13,
+		// 		mw1: Math.floor(Math.random() * 6) + 1,
+		// 		mvar1: Math.floor(Math.random() * 6) + 1,
+		// 		cos1: Math.floor(Math.random() * 1) + 0,
+        //         tem1 : Math.floor(Math.random() * 6) + 1,
+        //         kv2: Math.floor(Math.random() * (18 - 16 + 1)) + 16,
+		// 		a2: Math.floor(Math.random() * (12 - 11 + 1)) + 11,
+		// 		mw2: Math.floor(Math.random() * 6) + 1,
+		// 		mvar2: Math.floor(Math.random() * 6) + 1,
+		// 		cos2: Math.floor(Math.random() * 1) + 0,
+        //         tem2 : Math.floor(Math.random() * 6) + 1,
+        //         kv3: Math.floor(Math.random() * (15 - 13 + 1)) + 13,
+		// 		a3: Math.floor(Math.random() * (10 - 8 + 1)) + 8,
+		// 		mw3: Math.floor(Math.random() * 6) + 1,
+		// 		mvar3: Math.floor(Math.random() * 6) + 1,
+		// 		cos3: Math.floor(Math.random() * 1) + 0,
+        //         tem3 : Math.floor(Math.random() * 6) + 1,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(content));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }
+		// let myVar = setInterval(sendMessage, 1000);
+
+		let busbar35 = setInterval(() => {
+			let data = {
 				sc: "",
-				id: "MBA_110",
-				type: 7,
-				kv1: Math.floor(Math.random() * (22 - 20 + 1)) + 20,
-				a1: Math.floor(Math.random() * (15 - 13 + 1)) + 13,
-				mw1: Math.floor(Math.random() * 6) + 1,
-				mvar1: Math.floor(Math.random() * 6) + 1,
-				cos1: Math.floor(Math.random() * 1) + 0,
-                tem1 : Math.floor(Math.random() * 6) + 1,
-                kv2: Math.floor(Math.random() * (18 - 16 + 1)) + 16,
-				a2: Math.floor(Math.random() * (12 - 11 + 1)) + 11,
-				mw2: Math.floor(Math.random() * 6) + 1,
-				mvar2: Math.floor(Math.random() * 6) + 1,
-				cos2: Math.floor(Math.random() * 1) + 0,
-                tem2 : Math.floor(Math.random() * 6) + 1,
-                kv3: Math.floor(Math.random() * (15 - 13 + 1)) + 13,
-				a3: Math.floor(Math.random() * (10 - 8 + 1)) + 8,
-				mw3: Math.floor(Math.random() * 6) + 1,
-				mvar3: Math.floor(Math.random() * 6) + 1,
-				cos3: Math.floor(Math.random() * 1) + 0,
-                tem3 : Math.floor(Math.random() * 6) + 1,
+				id: "TBABA_110_C11",
+				type: MqttDataType.busBar,
+				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				cos: 0.95,
+                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+                freq: 50 - Math.ceil(Math.random() * 9)/100,
 			};
-			message = new Paho.MQTT.Message(JSON.stringify(content));
+			message = new Paho.MQTT.Message(JSON.stringify(data));
 			message.destinationName = "Received";
 			client.send(message);
-		}
-		let myVar = setInterval(sendMessage, 1000);
+		}, 2000)
+
+		let bay171 = setInterval(() => {
+			let data = {
+				sc: "",
+				id: "TBABA_BAY_171",
+				type: MqttDataType.bay,
+				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				cos: 0.95,
+                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+                freq: 50 - Math.ceil(Math.random() * 9)/100,
+			};
+			message = new Paho.MQTT.Message(JSON.stringify(data));
+			message.destinationName = "Received";
+			client.send(message);
+		}, 2000)
 		
 	</script>
 

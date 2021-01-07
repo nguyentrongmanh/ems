@@ -48,14 +48,6 @@
 		bottom: 4px;
 	    right: 4px;
 	}
-
-	.mchb .second-item-mchb {
-	    width: 12px;
-	    height: 24px;
-	    border: 2px solid yellow;
-	    background-color: red;
-	}
-
 	.mchb .last-item-mchb {
 		position: relative;
 		width: 10px;

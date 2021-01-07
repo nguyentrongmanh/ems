@@ -13,17 +13,20 @@
 					<select name="role" aria-controls="dataTable"
 						class="custom-select search-select custom-select-sm form-control form-control-sm">
 						<option value="">ALL</option>
-						<option value="0">STUDENT</option>
-						<option value="1">TEACHER</option>
+						<option value="0">USER</option>
+						<option value="1">ADMIN</option>
+						<option value="2">SUPPER ADMIN</option>
 					</select>
 				</label>
 			</div>
-			<div class="col-sm-12 col-md-4">
+			<div class="col-sm-12 col-md-5">
 				<label style="display: flex; justify-content: flex-end;">
 					Search by email:<input type="search" name="search"
 						class="table-search form-control form-control-sm" placeholder="" aria-controls="dataTable">
-					<button class="btn btn-primary btn-search">Search</button>
 				</label>
+			</div>
+			<div class="col-sm-12 col-md-3">
+				<button class="btn btn-primary btn-search">Search</button>
 			</div>
 		</div>
 	</div>
@@ -62,38 +65,38 @@
 			</div>
 		</div>
 		<div class="table-responsive">
-			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<table class="table table-bordered" width="100%" cellspacing="0">
 				<thead>
 					<tr>
 						<th style="width: 20px">ID</th>
 						<th>Name</th>
 						<th>Email</th>
 						<th>Phone</th>
-						<th>Role</th>
-						<th class="w-100">Created</th>
+						<th class="width-70">Role</th>
+						<th>Created</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
 						<th style="width: 20px">ID</th>
-						<th>Name</th>
+						<th >Name</th>
 						<th>Email</th>
 						<th>Phone</th>
-						<th>Role</th>
-						<th class="w-100">Created</th>
+						<th class="width-70">Role</th>
+						<th class="">Created</th>
 						<th>Action</th>
 					</tr>
 				</tfoot>
 				<tbody>
 					@foreach ($users as $user)
-					<tr style="width: 20px">
+					<tr>
 						<td>{{ $user->id }}</td>
 						<td>{{ $user->name }}</td>
 						<td>{{ $user->email }}</td>
 						<td>{{ $user->phone }}</td>
-						<td>{{ $user->role == 1  ? __("ADMIN") : __("USER")}}</td>
-						<th class="w-100">{{ $user->getFormatCreated() }}</td>
+						<td class="width-70">{{ $user->role == 2  ? __("SUPPER ADMIN") : $user->role == 1 ? __("ADMIN") : __("USER")}}</td>
+						<th class="">{{ $user->getFormatCreated() }}</td>
 						<td style="width: 50px">
 							<div class="dropdown">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"

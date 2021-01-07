@@ -39,6 +39,6 @@ class User extends Authenticatable
     }
 
 	public function getAvatarUrl() {
-        return $this->avatar ? url("/avatar/" . $this->avatar) : url('/images/default_avatar.png');
+        return $this->avatar ? url("/images/" . $this->avatar) : url('/images/default_avatar.png');
     }
 }

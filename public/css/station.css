@@ -237,7 +237,8 @@
 	position: absolute;
     bottom: -40px;
     transform: rotate(90deg);
-    left: -100px;
+	left: -100px;
+	z-index: 1;
 }
 
 .connecting-busbar .connecting-busbar-item-first {
@@ -323,13 +324,15 @@
 }
 
 .rhombus .rhombus-content {
-	width: 0;
-  	height: 0;
-  	border: 8px solid transparent;
-  	border-bottom-color: red;
-  	position: relative;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #7cdb32;
+    background-color: black;
+	transform: rotate(45deg);
+	margin-top: 8px;
+    margin-right: 5px
 }
-
+/* 
 .rhombus .rhombus-content:after {
 	content: '';
   	position: absolute;
@@ -339,7 +342,7 @@
 	height: 0;
 	border: 8px solid transparent;
 	border-top-color: red;
-}
+} */
 
 .rhombus .rhombus-label {
 	margin-bottom: -22px;
@@ -368,7 +371,7 @@
 	width: 11px;
   	height: 11px;
   	border: 2px solid #7cdb32;
-  	background-color: black;
+  	background-color: #d4d6d4;
   	transform: rotate(45deg);
 }
 
@@ -419,8 +422,8 @@
 	position: absolute;
 	width: 12px;
 	height: 24px;
-	border: 2px solid yellow;
-	background-color: red;
+	border: 2px solid #7cdb32;
+	background-color: black;
 }
 
 .cutting {

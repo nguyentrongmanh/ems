@@ -4,16 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
-use App\Alarm;
 use App\User;
-use Asan\PHPExcel\Excel as ExcelReader;
+use App\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-class AlarmsController extends Controller
+class EventsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -32,10 +31,10 @@ class AlarmsController extends Controller
     public function index(Request $request)
     {
 		$queryParams = $request->query();
-		$alarms = Alarm::limit(20)->get();
-        return view('admin.alarm.index', [
+		$events = Event::limit(20)->get();
+        return view('admin.event.index', [
             "queryParams" => $queryParams,
-            "alarms" => $alarms
+            "events" => $events
 		]);
 	}
 }

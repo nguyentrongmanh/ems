@@ -96,56 +96,44 @@ class UsersController extends Controller
 	public function getEdit($id)
     {
 		$user = User::find($id);
-		$classes = Classes::get();
 		return view('admin.users.edit', [
 			"user" => $user,
-			"classes" => $classes
 		]);
 	}
 	
 	public function edit(UserValidator $request, $id)
     {
+		Log::info('0');
 		if (!$request->validated()) {
             return redirect()->back();
         }
 		$data = $request->input();
 		unset($data['_token']);
 		if ($data['role'] == UserRole::ADMIN) {
-			$data['mssv'] = null;
-			$data['class_id'] = null;
 		}
-
+		Log::info('message0');
 		try {
 			$user = User::find($id);
-			$oldClassId = $user->class_id;
 			if ($request->file('image') != null) {
+				Log::info('message1');
 				$image = $request->file('image');
 				$imageName = "image_" . md5(time()) . "." . $image->getClientOriginalExtension();
 				$image->move(FileUploadPath::IMAGE, $imageName);
-				if ($user->image != null) {
-					File::delete(public_path('images/' . $user->image));
+				if ($user->avatar != null) {
+					File::delete(public_path('images/' . $user->avatar));
 				}
+				Log::info('message2');
 				$user->avatar = $imageName;
 			}
 
-			$newClassId = $data['class_id'];
+			Log::info('message');
+
+
 			$user->name = $data['name'];
 			$user->date_of_birth = $data["date_of_birth"];
-			$user->mssv = $data["mssv"];
 			$user->address = $data["address"];
 			$user->phone = $data["phone"];
 			$user->role = $data["role"];
-			$user->class_id = $data["class_id"];
-			if ($data['role'] != UserRole::ADMIN && $newClassId != $oldClassId) {
-				$class = Classes::find($newClassId);
-				$class->student_number = $class->student_number + 1;
-				$class->save();
-				if ($oldClassId != null) {
-					$oldClass = Classes::find($oldClassId);
-					$oldClass->student_number = $oldClass->student_number - 1;
-					$oldClass->save();
-				}
-			}
 			$user->save();
 		} catch (\Exception $e) {
 			Log::info($e);

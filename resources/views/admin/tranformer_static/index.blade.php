@@ -42,23 +42,6 @@
 		<h6 class="m-0 font-weight-bold text-primary">Classes list</h6>
 	</div>
 	<div class="card-body">
-		<div class="row">
-			<div class="col-sm-12 col-md-6">
-				<div class="dataTables_length" id="dataTable_length">
-					<label style="display: flex">
-						<p>Show</p>
-						<select name="dataTable_length" aria-controls="dataTable"
-							class="table-entries custom-select custom-select-sm form-control form-control-sm">
-							<option value="10">10</option>
-							<option value="25">25</option>
-							<option value="50">50</option>
-							<option value="100">100</option>
-						</select>
-						<p>Entries</p>
-					</label>
-				</div>
-			</div>
-		</div>
 		<div class="table-responsive">
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 				<thead>
