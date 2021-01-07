@@ -1,4 +1,4 @@
-@extends('layouts.tba')
+@extends('layouts.mba')
 
 @section('content')
 
@@ -363,7 +363,7 @@
 			</div>
 		</div>
 		<div class="bac-a-bottom-bay">
-			<div class="blue-left" style="padding: 0px 20px 20px 20%;margin-top: 20px;">
+			<div class="blue-left" style="padding: 0px 20px 20px 20%;margin-top: 12px;">
 				<div class="blue-left-wrapper">
 					<div class="blue-left-item first-child">
 						<div class="fuse-wrapper " id="CS3T1">
@@ -419,7 +419,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
-						<div class="triangle-up-bottom"></div>
+						<div class="triangle-up-bottom-aqua"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => 'TD31-38',
 							'label' => "TD31-38",
@@ -433,7 +433,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
-						<div class="triangle-up-bottom"></div>
+						<div class="triangle-up-bottom-aqua"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => '371-76',
 							'label' => "371-76",
@@ -447,7 +447,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
-						<div class="triangle-up-bottom"></div>
+						<div class="triangle-up-bottom-aqua"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => '373-76',
 							'label' => "373-76",
@@ -461,7 +461,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
-						<div class="triangle-up-bottom"></div>
+						<div class="triangle-up-bottom-aqua"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => '375-76',
 							'label' => "375-76",
@@ -475,7 +475,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
-						<div class="triangle-up-bottom"></div>
+						<div class="triangle-up-bottom-aqua"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => '377-76',
 							'label' => "377-76",
@@ -489,7 +489,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
-						<div class="triangle-up-bottom"></div>
+						<div class="triangle-up-bottom-aqua"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => '379-76',
 							'label' => "379-76",
@@ -503,6 +503,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
+						<div class="triangle-up-bottom-aqua"></div>
 						<div class="triangle-up-bottom"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => 'TCU31',
@@ -517,7 +518,7 @@
                         ]])
 					</div>
 					<div class="blue-left-item">
-						<div class="triangle-up-bottom "></div>
+						<div class="triangle-up-bottom-aqua"></div>
 						@include('elements.earth-breaker', [ "data" => [
 							'id' => '312-15',
 							'label' => "312-15",

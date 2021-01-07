@@ -1,11 +1,11 @@
-@extends('layouts.tba')
+@extends('layouts.mba')
 @section('content')
 <div class="page-wrapper">
 	<div class="station-top">
 	<div class="main-parameter">
 			<div class="main-parameter-header">
 				<a href="{{ url('mba/bac-a') }}" class="single-line">
-					SEE MORE
+					SINGLE LINE
 				</a>
 			</div>
 			<table class="main-parameter-content">

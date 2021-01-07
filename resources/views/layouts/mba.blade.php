@@ -34,7 +34,7 @@
 </head>
 
 <body>
-<div id="js-preloader" class="js-preloader">
+<!-- <div id="js-preloader" class="js-preloader">
 	<div class="preloader-inner">
 		<span class="dot"></span>
 		<div class="dots">
@@ -43,8 +43,11 @@
 			<span></span>
 		</div>
 	</div>
-</div>
+</div> -->
 	<script language="JavaScript">
+		let TBABA_171_CB = true;
+		let TBABA_171_7_ES = true;
+
         function addData(chart, label, data) {
             chart.data.labels.push(label);
             chart.data.datasets.forEach((dataset, index) => {
@@ -101,14 +104,10 @@
 		const circuitBreakerUpdate = (data) => {
 			let circuitBreakerId = "#" + data.id
 			if (data.status == 1) {
-				console.log(data)
-				console.log(circuitBreakerId)
-				console.log($(circuitBreakerId).find(".cutting-content"))
 				$(circuitBreakerId).find(".cutting-content").css("background-color", "black")
 			} else {
-				console.log(data)
-				console.log($(circuitBreakerId).find(".cutting-content"))
 				$(circuitBreakerId).find(".cutting-content").css("background-color", "#d4d6d4")
+				alert("xxx")
 			}
 
 		}

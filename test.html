@@ -89,41 +89,50 @@
 		// }
 		// let myVar = setInterval(sendMessage, 1000);
 
-		// let busbar35 = setInterval(() => {
-		// 	let data = {
-		// 		sc: "",
-		// 		id: "TBABA_110_C11",
-		// 		type: MqttDataType.busBar,
-		// 		kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		cos: 0.95,
-        //         tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
-        //         freq: 50 - Math.ceil(Math.random() * 9)/100,
-		// 	};
-		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
-		// 	message.destinationName = "Received";
-		// 	client.send(message);
-		// }, 2000)
 
-		// let bay171 = setInterval(() => {
-		// 	let data = {
-		// 		sc: "",
-		// 		id: "TBABA_BAY_171",
-		// 		type: MqttDataType.bay,
-		// 		kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-		// 		cos: 0.95,
-        //         tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
-        //         freq: 50 - Math.ceil(Math.random() * 9)/100,
-		// 	};
-		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
-		// 	message.destinationName = "Received";
-		// 	client.send(message);
-		// }, 2000)
+		// thanh cái C11 thông số đo lường
+		let busbar35 = setInterval(() => {
+			let data = {
+				sc: "",
+				id: "TBABA_110_C11",
+				type: MqttDataType.busBar,
+				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				cos: 0.95,
+                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+                freq: 50 - Math.ceil(Math.random() * 9)/100,
+			};
+			message = new Paho.MQTT.Message(JSON.stringify(data));
+			message.destinationName = "Received";
+			client.send(message);
+		}, 2000)
+
+
+		// Ngăn lộ 171 các thông số đo lường
+		let bay171 = setInterval(() => {
+			let data = {
+				sc: "",
+				id: "TBABA_BAY_171",
+				type: MqttDataType.bay,
+				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+				cos: 0.95,
+                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+                freq: 50 - Math.ceil(Math.random() * 9)/100,
+			};
+			message = new Paho.MQTT.Message(JSON.stringify(data));
+			message.destinationName = "Received";
+			client.send(message);
+		}, 2000)
+
+
+
+
+
 
 		let turnON171CB = () => {
 			let data = {
