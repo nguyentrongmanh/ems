@@ -100,7 +100,17 @@
 
 		const circuitBreakerUpdate = (data) => {
 			let circuitBreakerId = "#" + data.id
-			// $(circuitBreakerId).find(".cutting-content").css("background-color")
+			if (data.status == 1) {
+				console.log(data)
+				console.log(circuitBreakerId)
+				console.log($(circuitBreakerId).find(".cutting-content"))
+				$(circuitBreakerId).find(".cutting-content").css("background-color", "black")
+			} else {
+				console.log(data)
+				console.log($(circuitBreakerId).find(".cutting-content"))
+				$(circuitBreakerId).find(".cutting-content").css("background-color", "#d4d6d4")
+			}
+
 		}
 
 		const MqttDataType = {
@@ -175,7 +185,7 @@
 					updateBayStatic(data)
 					break;
 				case MqttDataType.circuitBreaker:
-					updateBayStatic(data)
+					circuitBreakerUpdate(data)
 					break;
 				case MqttDataType.transformer:
 					console.log(data)

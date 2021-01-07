@@ -7,15 +7,10 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>SB Admin 2 - Dashboard</title>
-	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body>
-	<div id="wrapper">Test mqtt</div>
-	
-</body>
 <script language="JavaScript">
 		const MqttDataType = {
 			circuitBreaker: 1,
@@ -94,42 +89,79 @@
 		// }
 		// let myVar = setInterval(sendMessage, 1000);
 
-		let busbar35 = setInterval(() => {
-			let data = {
-				sc: "",
-				id: "TBABA_110_C11",
-				type: MqttDataType.busBar,
-				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				cos: 0.95,
-                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
-                freq: 50 - Math.ceil(Math.random() * 9)/100,
-			};
-			message = new Paho.MQTT.Message(JSON.stringify(data));
-			message.destinationName = "Received";
-			client.send(message);
-		}, 2000)
+		// let busbar35 = setInterval(() => {
+		// 	let data = {
+		// 		sc: "",
+		// 		id: "TBABA_110_C11",
+		// 		type: MqttDataType.busBar,
+		// 		kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		cos: 0.95,
+        //         tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+        //         freq: 50 - Math.ceil(Math.random() * 9)/100,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000)
 
-		let bay171 = setInterval(() => {
+		// let bay171 = setInterval(() => {
+		// 	let data = {
+		// 		sc: "",
+		// 		id: "TBABA_BAY_171",
+		// 		type: MqttDataType.bay,
+		// 		kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		cos: 0.95,
+        //         tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+        //         freq: 50 - Math.ceil(Math.random() * 9)/100,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000)
+
+		let turnON171CB = () => {
 			let data = {
-				sc: "",
-				id: "TBABA_BAY_171",
-				type: MqttDataType.bay,
-				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				cos: 0.95,
-                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
-                freq: 50 - Math.ceil(Math.random() * 9)/100,
+				id: "TBABA_171_CB",
+				type: MqttDataType.circuitBreaker,
+                status: 1,
 			};
 			message = new Paho.MQTT.Message(JSON.stringify(data));
 			message.destinationName = "Received";
 			client.send(message);
-		}, 2000)
+		}
+
+		let turnOF171CB = () => {
+			let data = {
+				id: "TBABA_171_CB",
+				type: MqttDataType.circuitBreaker,
+                status: 0,
+			};
+			message = new Paho.MQTT.Message(JSON.stringify(data));
+			message.destinationName = "Received";
+			client.send(message);
+		}
 		
-	</script>
+</script>
 
+<body>
+	<div id="wrapper">Test mqtt</div>
+	<button id="turnOn">Turn On</button>
+	<button id="turnOff">Turn Off</button>
+	<script>
+		$(document).ready(function(){
+			$("#turnOn").on("click", function() {
+				turnON171CB()
+			});
+			$("#turnOff").on("click", function() {
+				turnOF171CB()
+			});
+		});
+	</script>
+</body>
 </html>

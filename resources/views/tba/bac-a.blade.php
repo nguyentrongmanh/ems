@@ -6,9 +6,9 @@
 	<div class="station-top station-top-border-bottom">
 		<div class="main-parameter">
 			<div class="main-parameter-header">
-				<a href="{{ url('mba/bac-a') }}" class="single-line">
-					SEE MORE
-				</a>
+				<div class="single-line">
+					SINGLE LINE
+				</div>
 			</div>
 			<table class="main-parameter-content">
 				<tr class="main-parameter-item">

@@ -114,7 +114,7 @@
                                     ]])
                                     
                                     @include('elements.circuit-breaker', [ "data" => [
-                                        'id' => '171',
+                                        'id' => 'TBABA_171_CB',
                                         'label' => "171",
                                         'class' => 'bay-item-fourth'
                                     ]])
