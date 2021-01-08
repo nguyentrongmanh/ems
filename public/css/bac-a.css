@@ -98,14 +98,11 @@
 	height: 10px !important;
 }
 
-
 #CS0T1 {
     transform: rotate(-90deg);
     bottom: -45px;
     right: 50px;
 }
-
-
 
 .connnecting-transformer-single-line {
     padding: 20px;
@@ -116,7 +113,6 @@
     height: 4px;
     background: red;
 }
-
 
 .connnecting-transformer-single-line .connecting-transformer {
     margin-left: 45%;
@@ -132,4 +128,20 @@
     font-weight: 600;
     top: 20px;
     left: -110px;
+}
+
+
+
+.detail-bay-c11 {
+    position: relative; border-left: 1px solid red;
+}
+
+.detail-bay-c11 .busbar-110 {
+    top: 230px;
+    bottom: unset !important;
+}
+
+.detail-bay-c11 .busbar-label {
+    top: 235px;
+    bottom: unset !important;
 }

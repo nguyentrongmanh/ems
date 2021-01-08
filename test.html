@@ -19,7 +19,9 @@
 			bay: 4,
 			mainBusBar: 5,
 			busBar: 6,
-			transformer: 7
+			transformer: 7,
+			alarm: 8,
+			protection: 9,
         }
         var clientID = "web" + new Date().getTime();
 		var client = new Paho.MQTT.Client("soldier.cloudmqtt.com", 36094, clientID);
@@ -91,52 +93,157 @@
 
 
 		// thanh cái C11 thông số đo lường
-		let busbar35 = setInterval(() => {
+		// let busbar35 = setInterval(() => {
+		// 	let data = {
+		// 		sc: "",
+		// 		id: "TBABA_110_C11",
+		// 		type: MqttDataType.busBar,
+		// 		kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		cos: 0.95,
+        //         tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+        //         freq: 50 - Math.ceil(Math.random() * 9)/100,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000)
+
+
+		// // Ngăn lộ 171 các thông số đo lường
+		// let bay171 = setInterval(() => {
+		// 	let data = {
+		// 		sc: "",
+		// 		id: "TBABA_BAY_171",
+		// 		type: MqttDataType.bay,
+		// 		kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		cos: 0.95,
+        //         tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+        //         freq: 50 - Math.ceil(Math.random() * 9)/100,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000)
+
+		// // Ngăn lộ 131 các thông số đo lường
+		// let bay131 = setInterval(() => {
+		// 	let data = {
+		// 		sc: "",
+		// 		id: "TBABA_BAY_131",
+		// 		type: MqttDataType.bay,
+		// 		kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
+		// 		cos: 0.95,
+        //         tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
+        //         freq: 50 - Math.ceil(Math.random() * 9)/100,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000)
+
+		// Thanh cái C12
+
+
+
+		// các bản tin trạng thái khí cụ điện ngăn lộ 131 : 1 là open, 0 là close 
+
+		// let maycat131 = setInterval(() => {
+		// 	let data = {
+		// 		id: "TBABA_131_CB",
+		// 		bay: 131,
+		// 		type: MqttDataType.circuitBreaker,
+        //         status: 0,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000);
+
+		// let daocachly131_1 = setInterval(() => {
+		// 	let data = {
+		// 		id: "TBABA_131_1_DS",
+		// 		bay: 131,
+		// 		type: MqttDataType.disconnectorSwitch,
+        //         status: 0,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000);
+
+		// let daocachly131_3 = setInterval(() => {
+		// 	let data = {
+		// 		id: "TBABA_131_3_DS",
+		// 		bay: 131,
+		// 		type: MqttDataType.disconnectorSwitch,
+        //         status: 0,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000);
+
+		// let daotiepdia131_15 = setInterval(() => {
+		// 	let data = {
+		// 		id: "TBABA_131_15_EB",
+		// 		bay: 131,
+		// 		type: MqttDataType.earthBreaker,
+        //         status: 0,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000);
+
+		// let daotiepdia131_35 = setInterval(() => {
+		// 	let data = {
+		// 		id: "TBABA_131_35_EB",
+		// 		bay: 131,
+		// 		type: MqttDataType.earthBreaker,
+        //         status: 0,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000);
+
+		// let daotiepdia131_38 = setInterval(() => {
+		// 	let data = {
+		// 		id: "TBABA_131_38_EB",
+		// 		bay: 131,
+		// 		type: MqttDataType.earthBreaker,
+        //         status: 0,
+		// 	};
+		// 	message = new Paho.MQTT.Message(JSON.stringify(data));
+		// 	message.destinationName = "Received";
+		// 	client.send(message);
+		// }, 2000);
+
+		let protectionSignal = () => {
 			let data = {
-				sc: "",
-				id: "TBABA_110_C11",
-				type: MqttDataType.busBar,
-				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				cos: 0.95,
-                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
-                freq: 50 - Math.ceil(Math.random() * 9)/100,
+				id: "TBABA_131_CB",
+				bay: 131,
+				type: MqttDataType.protection,
+                status: 1,
 			};
 			message = new Paho.MQTT.Message(JSON.stringify(data));
 			message.destinationName = "Received";
 			client.send(message);
-		}, 2000)
-
-
-		// Ngăn lộ 171 các thông số đo lường
-		let bay171 = setInterval(() => {
-			let data = {
-				sc: "",
-				id: "TBABA_BAY_171",
-				type: MqttDataType.bay,
-				kv: 110 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				a: 320 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mw: 57 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				mvar: 24 + Math.ceil(Math.random() * 20) * (Math.round(Math.random()) ? 1 : -1)/100,
-				cos: 0.95,
-                tem: 60 + Math.ceil(Math.random() * 99) * (Math.round(Math.random()) ? 1 : -1)/100,
-                freq: 50 - Math.ceil(Math.random() * 9)/100,
-			};
-			message = new Paho.MQTT.Message(JSON.stringify(data));
-			message.destinationName = "Received";
-			client.send(message);
-		}, 2000)
-
-
-
-
-
+		}
 
 		let turnON171CB = () => {
 			let data = {
-				id: "TBABA_171_CB",
+				id: "TBABA_131_CB",
+				bay: 131,
 				type: MqttDataType.circuitBreaker,
                 status: 1,
 			};
@@ -147,7 +254,8 @@
 
 		let turnOF171CB = () => {
 			let data = {
-				id: "TBABA_171_CB",
+				id: "TBABA_131_CB",
+				bay: 131,
 				type: MqttDataType.circuitBreaker,
                 status: 0,
 			};
@@ -155,13 +263,29 @@
 			message.destinationName = "Received";
 			client.send(message);
 		}
-		
+
+		let toggleDaoCachLy131_3 = (value) => {
+			let data = {
+				id: "TBABA_131_3_DS",
+				bay: 131,
+				type: MqttDataType.disconnectorSwitch,
+                status: value,
+			};
+			message = new Paho.MQTT.Message(JSON.stringify(data));
+			message.destinationName = "Received";
+			client.send(message);
+		}
 </script>
 
 <body>
 	<div id="wrapper">Test mqtt</div>
 	<button id="turnOn">Turn On</button>
 	<button id="turnOff">Turn Off</button>
+	<br>
+	<button id="open131_3">Mở dao cách ly 131 3</button>
+	<button id="close131_3">Đóng dao cách ly 131 3</button>
+	<br>
+	<button id="protection">protection</button>
 	<script>
 		$(document).ready(function(){
 			$("#turnOn").on("click", function() {
@@ -169,6 +293,16 @@
 			});
 			$("#turnOff").on("click", function() {
 				turnOF171CB()
+			});
+
+			$("#open131_3").on("click", function() {
+				toggleDaoCachLy131_3(1)
+			});
+			$("#close131_3").on("click", function() {
+				toggleDaoCachLy131_3(0)
+			});
+			$("#protection").on("click", function() {
+				protectionSignal()
 			});
 		});
 	</script>

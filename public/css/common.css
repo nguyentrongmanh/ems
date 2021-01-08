@@ -578,7 +578,7 @@
 }
 
 .tranformer-static-table td{
-	padding: 5px 10px;
+	padding: 3px 10px;
 	font-size: 14px;
 }
 
@@ -757,6 +757,12 @@
 	background-color: #30bf56;
 }
 
-#ex1 {
+.ems-modal {
 	height: 150px;
+}
+
+
+.modal a.close-modal {
+	top: -2.5px !important;
+    right: -2.5px !important;
 }
