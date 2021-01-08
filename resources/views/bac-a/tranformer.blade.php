@@ -97,15 +97,6 @@
                             <div class="voltage-condition-lable">PRESSURE</div>
                             <div class="voltage-condition-value">TRIP</div>
                         </div>
-                        <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">AC SUPPLY</div>
-                            <div class="voltage-condition-value">FAILURE</div>
-                        </div>
-                        <div class="voltage-condition-item">
-                            <div class="voltage-condition-lable">DC SUPPLY</div>
-                            <div class="voltage-condition-value">FAILURE</div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -225,6 +216,12 @@
                                 <td class="value">49.98</td>
                                 <td class="value">49.98</td>
                             </tr>
+                            <tr>
+                                <td class="unit">TEMPERATURE</td>
+                                <td class="value">49.98 &#8451;</td>
+                                <td class="value">49.98 &#8451;</td>
+                                <td class="value">49.98 &#8451;</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -285,7 +282,7 @@
                 </div>
             </div>
             <div class="col-4 padding-x-5 table-cell">
-                {{-- <div class="background-white box-wraper" style="height: calc(100% - 5px);">
+                <div class="background-white box-wraper" style="height: calc(100% - 5px);">
                     <h5 class="box-title">FAN GROUP</h5>
                     <div class="status-group-flex">
                         <div class="status-box">
@@ -309,7 +306,7 @@
                         <button>FAN 1 CONTROL</button>
                         <button>FAN 2 CONTROL</button>
                     </div>
-                </div> --}}
+                </div>
             </div>
             {{-- <div class="col-4 padding-x-5 table-cell">
                 <div class="background-white box-wraper" style="height: calc(100% - 5px);">
