@@ -6,7 +6,7 @@
 
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>Test english online</title>
+	<title>MANDEVICE SCADA/EMS</title>
 	<!-- Scripts -->
 	{{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
@@ -102,7 +102,7 @@
 		  }
 		}
 
-		const updateBusBarStatic = (data) => {
+		const updateBusBarStatic = (daota) => {
 			let staticTableId = "#" + data.id
 			$(staticTableId).find(".kv-value").html(data.kv);
 			$(staticTableId).find(".a-value").html(data.a);
@@ -169,27 +169,38 @@
 		}
 
 
-		const protectionProcess = () => {
+		const protectionProcess = (data) => {
+			let protectionGroupId = ""
+			switch (data.bay) {
+				case 131:
+					protectionGroupId = "BAY_131_ALARM"
+					break;
+				default:
+					break;
+			}
+			$("#" + protectionGroupId).find("." + data.id).find("div").css("color", "red")
+
+
 			$('#protection-warning-modal').modal({});
-			// var audioElement = document.createElement('audio');
-			// audioElement.setAttribute('src', 'http://localhost/ems/public/audio/warning.mp3');
-			let audioElement = document.createElement('audio');
-			audioElement.setAttribute('src', 'http://www.soundjay.com/misc/sounds/bell-ringing-01.mp3');
+			// // var audioElement = document.createElement('audio');
+			// // audioElement.setAttribute('src', 'http://localhost/ems/public/audio/warning.mp3');
+			// let audioElement = document.createElement('audio');
+			// audioElement.setAttribute('src', 'http://www.soundjay.com/misc/sounds/bell-ringing-01.mp3');
 			
-			audioElement.addEventListener('ended', function() {
-				this.play();
-			}, false);
+			// audioElement.addEventListener('ended', function() {
+			// 	this.play();
+			// }, false);
 			
-			audioElement.addEventListener("canplay",function(){
-				$("#length").text("Duration:" + audioElement.duration + " seconds");
-				$("#source").text("Source:" + audioElement.src);
-				$("#status").text("Status: Ready to play").css("color","green");
-			});
+			// audioElement.addEventListener("canplay",function(){
+			// 	$("#length").text("Duration:" + audioElement.duration + " seconds");
+			// 	$("#source").text("Source:" + audioElement.src);
+			// 	$("#status").text("Status: Ready to play").css("color","green");
+			// });
 			
-			audioElement.addEventListener("timeupdate",function(){
-				$("#currentTime").text("Current second:" + audioElement.currentTime);
-			});
-			audioElement.play()
+			// audioElement.addEventListener("timeupdate",function(){
+			// 	$("#currentTime").text("Current second:" + audioElement.currentTime);
+			// });
+			// audioElement.play()
 		}
 
 		function onMessageArrived(message) {
@@ -289,16 +300,12 @@
 	</div>
 	<div id="protection-warning-modal" class="modal">
 		<div class="cb-control-panel">
-			<div class="current-status">131-3: DISCONNECTOR SWITCH IS CLOSE</div>
+			<h3>Cảnh báo protection ngăn lộ 131</h3>
 			<img src="{{ url('image/warning-icon.jpg') }}" style="width: 60px; height:60px;" />
-			{{-- <iframe src="{{ url('audio/warning.mp3') }}" allow="autoplay" style="display:none" id="iframeAudio">
-			</iframe>  --}}
-			<audio id="protection-audio" controls>
-				<source src="{{ url('audio/warning.mp3') }}" type="audio/mpeg">
-			</audio>
+			<iframe src="{{ url('audio/warning.mp3') }}" allow="autoplay" style="display:none" id="iframeAudio">
+			</iframe>
 			<div class="cb-control-btn">
-				<button class="close-DS-button">CONFIRM</button>
-				<button class="open-DS-button">CANCLE</button>
+				<button class="open-DS-button btn btn-danger">CONFIRM</button>
 			</div>
 		</div>
 	</div>

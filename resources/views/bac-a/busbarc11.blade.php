@@ -10,7 +10,7 @@
         <div class="row" style="margin-right: 0px;margin-left: 0px;">
             <div class="col-4 padding-x-5">
                 <div class="background-white box-wraper">
-                    <h5 class="box-title">BAY ALARM</h5>
+                    <h5 class="box-title">BAY 171 ALARM</h5>
                     <div class="voltage-condition">
                         <div class="voltage-condition-item width-48-percent">
                             <div class="voltage-condition-lable">OVER CURRENT</div>
@@ -44,11 +44,27 @@
                             <div class="voltage-condition-lable">UNDER FREQUENCY</div>
                             <div class="voltage-condition-value">ALARM</div>
                         </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">87L</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">21/21N</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">50/51</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">27/59</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
                     </div>
                 </div>
                 <div class="background-white box-wraper" style="">
-                    <h5 class="box-title">BUSBAR ALARM</h5>
-                    <div class="voltage-condition">
+                    <h5 class="box-title">BAY 131 ALARM</h5>
+                    <div class="voltage-condition" id="BAY_131_ALARM">
                         <div class="voltage-condition-item width-48-percent">
                             <div class="voltage-condition-lable">OVER CURRENT</div>
                             <div class="voltage-condition-value">ALARM</div>
@@ -80,6 +96,30 @@
                         <div class="voltage-condition-item width-48-percent">
                             <div class="voltage-condition-lable">UNDER FREQUENCY</div>
                             <div class="voltage-condition-value">ALARM</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent ">
+                            <div class="voltage-condition-lable">87L</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">21/21N</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">50/51</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">27/59</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent PROTECTION_87T">
+                            <div class="voltage-condition-lable">87T</div>
+                            <div class="voltage-condition-value">TRIP</div>
+                        </div>
+                        <div class="voltage-condition-item width-48-percent">
+                            <div class="voltage-condition-lable">87B</div>
+                            <div class="voltage-condition-value">TRIP</div>
                         </div>
                     </div>
                 </div>

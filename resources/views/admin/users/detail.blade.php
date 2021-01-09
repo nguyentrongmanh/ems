@@ -42,24 +42,10 @@
 							{{ $user->phone }}
 						</div>
 					</div>
-					@if($user->role == 0)
-					<div class="form-group row">
-						<label class="col-sm-2 col-form-label">Student COde</label>
-						<div class="col-sm-10 detail-value">
-							{{ $user->mssv }}
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-2 col-form-label">Class</label>
-						<div class="col-sm-10 detail-value">
-							{{ $user->classes->name }}
-						</div>
-					</div>
-					@endif
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">Role</label>
 						<div class="col-sm-10 detail-value">
-							{{ $user->role == 0 ? 'STUDENT' : 'TEACHER' }}
+							{{ $user->role == 2  ? __("SUPPER ADMIN") : ($user->role == 1 ? __("ADMIN") : __("USER")) }}
 						</div>
 					</div>
 				</div>

@@ -101,12 +101,8 @@ class UsersController extends Controller
 		]);
 	}
 	
-	public function edit(UserValidator $request, $id)
+	public function edit(Request $request, $id)
     {
-		Log::info('0');
-		if (!$request->validated()) {
-            return redirect()->back();
-        }
 		$data = $request->input();
 		unset($data['_token']);
 		if ($data['role'] == UserRole::ADMIN) {
