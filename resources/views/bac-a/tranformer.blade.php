@@ -102,65 +102,8 @@
             </div>
             <div class="col-4 padding-x-5">
                 <div class="background-black box-wraper min-height-350">
-                    <div class="connnecting-transformer-single-line" >
-                        <div class="busbar-c11"></div>
-                        <div class="connecting-transformer">
-                            <div class="busbar-label">C11</div>
-                            <div class="fuse-wrapper " id="CS1T1">
-                                <div class="electric-item-label">CS1T1</div>
-                                <div class="fuse-content">
-                                    <div class="fuse-top">
-                                    </div>	
-                                    <div class="fuse-middle"></div>	
-                                    <div class="fuse-bottom">
-                                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                viewBox="0 0 459.101 459.101" style="enable-background:new 0 0 459.101 459.101;" xml:space="preserve">
-                                            <g id="XMLID_1468_">
-                                                <polygon id="XMLID_1469_" points="244.551,238.037 244.551,27.05 214.551,27.05 214.551,238.037 0,238.037 0,268.037 
-                                                    459.101,268.037 459.101,238.037 	"/>
-                                                <rect id="XMLID_1470_" x="49.551" y="320.043" width="360" height="30"/>
-                                                <rect id="XMLID_1471_" x="94.551" y="402.05" width="270" height="30"/>
-                                            </g>
-                                        </svg>
-                                    </div>	
-                                </div>
-                            </div>
-                            @include('elements.disconnectors-switches', [ "data" => [
-                                'id' => '171-7',
-                                'label' => "171-7",
-                                'class' => 'bay-item-second'
-                            ]])
-    
-                            @include('elements.earth-breaker', [ "data" => [
-                                'id' => '171-75',
-                                'label' => "171-75",
-                                'class' => 'bay-item-third'
-                            ]])
-                            
-                            @include('elements.circuit-breaker', [ "data" => [
-                                'id' => '171',
-                                'label' => "171",
-                                'class' => 'bay-item-fourth'
-                            ]])
-    
-                            @include('elements.earth-breaker', [ "data" => [
-                                'id' => '171-15',
-                                'label' => "171-15",
-                                'class' => 'bay-item-fith'
-                            ]])
-    
-                            @include('elements.disconnectors-switches', [ "data" => [
-                                'id' => '171-1',
-                                'label' => "171-1",
-                                'class' => 'bay-item-sixth'
-                            ]])
-    
-                            @include('elements.earth-breaker', [ "data" => [
-                                'id' => '171-14',
-                                'label' => "171-14",
-                                'class' => 'bay-item-seven'
-                            ]])
-                        </div>
+                    <div class="background-black box-wraper">
+                        <img class="tranformer-image" src="{{ url('image/tranformer_t1.PNG') }}" />
                     </div>
                 </div>
             </div>
@@ -277,11 +220,6 @@
                 </div>
             </div>
             <div class="col-4 padding-x-5 table-cell">
-                <div class="background-black box-wraper">
-                    <img class="tranformer-image" src="{{ url('image/tranformer_t1.PNG') }}" />
-                </div>
-            </div>
-            <div class="col-4 padding-x-5 table-cell">
                 <div class="background-white box-wraper" style="height: calc(100% - 5px);">
                     <h5 class="box-title">FAN GROUP</h5>
                     <div class="status-group-flex">
@@ -308,7 +246,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-4 padding-x-5 table-cell">
+            <div class="col-4 padding-x-5 table-cell">
                 <div class="background-white box-wraper" style="height: calc(100% - 5px);">
                     <h5 class="box-title">TEMPERATURE MEASUREMENT</h5>
                     <div class="row" style="margin: 5px 0px;">
@@ -330,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>

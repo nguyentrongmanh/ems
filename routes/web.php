@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 
+Route::get('/huy', 'HomeController@huy');
 Route::get('/profile', 'HomeController@getProfile')->name('profile')->middleware('auth');
 Route::post('/profile', 'HomeController@profile')->name('profile')->middleware('auth');
 Route::get('/change-password', 'HomeController@getPassword')->name('change-password')

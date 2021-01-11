@@ -61,6 +61,11 @@ class HomeController extends Controller
     {
         return view('tba.hung-nguyen');
     }
+
+    public function huy()
+    {
+        return view('huy');
+    }
 	
     public function getProfile()
     {
