@@ -34,6 +34,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<script src="{{ url('js/substation_control.js') }}"></script>
 </head>
 
 <body>
@@ -58,6 +59,16 @@
 			"TBABA_131_15_EB": OPEN,
 			"TBABA_131_35_EB": OPEN,
 			"TBABA_131_38_EB": OPEN,
+		}
+
+		let TBABA_171_BAY_STATUS = {
+			"TBABA_171_CB" : CLOSE,
+			"TBABA_171_1_DS" : CLOSE,
+			"TBABA_171_7_DS": CLOSE,
+			"TBABA_171_15_EB": OPEN,
+			"TBABA_171_14_EB": OPEN,
+			"TBABA_171_75_EB": OPEN,
+			"TBABA_171_76_EB": OPEN,
 		}
 
 		
@@ -254,6 +265,8 @@
 			}
 		}
 
+
+	/////////////////////////////////////////////////////////NGĂN LỘ 131 ?/////////////////////////////////////////////////////
 		// kiểm tra điều kiện liên động máy cắt 131
 		const check131CircuitBreakerCondition = () => {
 			// đóng máy cắt
@@ -376,6 +389,150 @@
 			let status =  TBABA_131_BAY_STATUS.TBABA_131_38_EB == CLOSE ? "CLOSE" : "OPEN"
 			$("#earth-breaker-modal").find(".current-status").html("131-38: DISCONNECTOR SWITCH IS " + status)
 		}
+
+///////////////////////////////////////////////////////// Lộ 171 /////////////////////////////////////////////////////////////////
+		// kiểm tra điều kiện liên động máy cắt 171
+		const check171CircuitBreakerCondition = () => {
+			// đóng máy cắt
+			let enableClose = (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_7_DS == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_1_DS == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_75_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_76_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_14_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_15_EB == OPEN)
+			if (enableClose) {
+				$(".close-CB-button").prop("disabled", false)
+			} else {
+				$(".close-CB-button").prop("disabled", true)
+			}
+
+			// mở máy cắt
+			let enableOpen = (TBABA_171_BAY_STATUS.TBABA_171_CB == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_7_DS == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_1_DS == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_75_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_76_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_14_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_15_EB == OPEN)
+			if (enableOpen) {
+				$(".open-CB-button").prop("disabled", false)
+			} else {
+				$(".open-CB-button").prop("disabled", true)
+			}
+
+			let status =  TBABA_171_BAY_STATUS.TBABA_171_CB == CLOSE ? "CLOSE" : "OPEN"
+			$("#circuit-breaker-modal").find(".current-status").html("171: CIRCUIT BREAKER IS " + status)
+		}
+
+		// kiểm tra điều kiện liên động dao cách ly 171-7
+		const check171_7DisconnectorSwitchCondition = () => {
+			// đóng dao cách ly
+			let enableClose = (TBABA_171_BAY_STATUS.TBABA_171_7_DS == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_75 == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_76 == OPEN)
+			console.log(enableClose)
+			if (enableClose) {
+				$(".close-DS-button").prop("disabled", false)
+			} else {
+				$(".close-DS-button").prop("disabled", true)
+			}
+			// mở dao cách ly
+			let enableOpen = (TBABA_171_BAY_STATUS.TBABA_171_7_DS == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_75 == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_76 == OPEN)
+			if (enableOpen) {
+				$(".open-DS-button").prop("disabled", false)
+			} else {
+				$(".open-DS-button").prop("disabled", true)
+			}
+			let status =  TBABA_171_BAY_STATUS.TBABA_171_7_DS == CLOSE ? "CLOSE" : "OPEN"
+			$("#disconnector-switch-modal").find(".current-status").html("171-7: DISCONNECTOR SWITCH IS " + status)
+		}
+
+		// kiểm tra điều kiện liên động dao cách ly 171-1
+		const check171_1DisconnectorSwitchCondition = () => {
+			// đóng dao cách ly
+			let enableClose = (TBABA_171_BAY_STATUS.TBABA_171_1_DS == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_15 == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_14 == OPEN)
+			if (enableClose) {
+				$(".close-DS-button").prop("disabled", false)
+			} else {
+				$(".close-DS-button").prop("disabled", true)
+			}
+			// mở dao cách ly
+			let enableOpen = (TBABA_171_BAY_STATUS.TBABA_171_1_DS == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_15 == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_14 == OPEN)
+			if (enableOpen) {
+				$(".open-DS-button").prop("disabled", false)
+			} else {
+				$(".open-DS-button").prop("disabled", true)
+			}
+			let status =  TBABA_171_BAY_STATUS.TBABA_171_1_DS == CLOSE ? "CLOSE" : "OPEN"
+			$("#disconnector-switch-modal").find(".current-status").html("171-1: DISCONNECTOR SWITCH IS " + status)
+		}
+
+		// kiểm tra điều kiện liên động dao tiếp địa 171-15
+		const check171_15EarthBreakerCondition = () => {
+			// điều khiển dao tiếp địa
+			let enableClose = (TBABA_171_BAY_STATUS.TBABA_171_15_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_1_DS == OPEN)
+			if (enableClose) {
+				$(".close-EB-button").prop("disabled", false)
+			} else {
+				$(".close-EB-button").prop("disabled", true)
+			}
+			// mở dao tiếp địa
+			let enableOpen = (TBABA_171_BAY_STATUS.TBABA_171_15_EB == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_1_DS == OPEN)
+			if (enableOpen) {
+				$(".open-EB-button").prop("disabled", false)
+			} else {
+				$(".open-EB-button").prop("disabled", true)
+			}
+			let status =  TBABA_171_BAY_STATUS.TBABA_171_15_EB == CLOSE ? "CLOSE" : "OPEN"
+			$("#earth-breaker-modal").find(".current-status").html("171-15: EARTH BREAKER IS " + status)
+		}
+
+		// kiểm tra điều kiện liên động dao tiếp địa 171-14
+		const check171_14EarthBreakerCondition = () => {
+			// điều khiển dao tiếp địa
+			let enableClose = (TBABA_171_BAY_STATUS.TBABA_171_14_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_1_DS == OPEN)
+			if (enableClose) {
+				$(".close-EB-button").prop("disabled", false)
+			} else {
+				$(".close-EB-button").prop("disabled", true)
+			}
+			// mở dao tiếp địa
+			let enableOpen = (TBABA_171_BAY_STATUS.TBABA_171_14_EB == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_1_DS == OPEN)
+			if (enableOpen) {
+				$(".open-EB-button").prop("disabled", false)
+			} else {
+				$(".open-EB-button").prop("disabled", true)
+			}
+			let status =  TBABA_171_BAY_STATUS.TBABA_171_14_EB == CLOSE ? "CLOSE" : "OPEN"
+			$("#earth-breaker-modal").find(".current-status").html("171-14: EARTH BREAKER IS " + status)
+		}
+
+		// kiểm tra điều kiện liên động dao tiếp địa 171-75
+		const check171_75EarthBreakerCondition = () => {
+			// điều khiển dao tiếp địa
+			let enableClose = (TBABA_171_BAY_STATUS.TBABA_171_75_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_7_DS == OPEN)
+			if (enableClose) {
+				$(".close-EB-button").prop("disabled", false)
+			} else {
+				$(".close-EB-button").prop("disabled", true)
+			}
+			// mở dao tiếp địa
+			let enableOpen = (TBABA_171_BAY_STATUS.TBABA_171_75_EB == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_7_DS == OPEN)
+			if (enableOpen) {
+				$(".open-EB-button").prop("disabled", false)
+			} else {
+				$(".open-EB-button").prop("disabled", true)
+			}
+			let status =  TBABA_171_BAY_STATUS.TBABA_171_75_EB == CLOSE ? "CLOSE" : "OPEN"
+			$("#earth-breaker-modal").find(".current-status").html("171-75: EARTH BREAKER IS " + status)
+		}
+
+		// kiểm tra điều kiện liên động dao tiếp địa 171-76
+		const check171_76EarthBreakerCondition = () => {
+			// điều khiển dao tiếp địa
+			let enableClose = (TBABA_171_BAY_STATUS.TBABA_171_76_EB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_7_DS == OPEN)
+			if (enableClose) {
+				$(".close-EB-button").prop("disabled", false)
+			} else {
+				$(".close-EB-button").prop("disabled", true)
+			}
+			// mở dao tiếp địa
+			let enableOpen = (TBABA_171_BAY_STATUS.TBABA_171_76_EB == CLOSE) && (TBABA_171_BAY_STATUS.TBABA_171_CB == OPEN) && (TBABA_171_BAY_STATUS.TBABA_171_7_DS == OPEN)
+			if (enableOpen) {
+				$(".open-EB-button").prop("disabled", false)
+			} else {
+				$(".open-EB-button").prop("disabled", true)
+			}
+			let status =  TBABA_171_BAY_STATUS.TBABA_171_76_EB == CLOSE ? "CLOSE" : "OPEN"
+			$("#earth-breaker-modal").find(".current-status").html("171-76: EARTH BREAKER IS " + status)
+		}
 	</script>
 	@yield('content')
 	<div id="circuit-breaker-modal" class="modal ems-modal">
@@ -422,109 +579,4 @@
 		</div>
 	</div>
 </body>
-
-<script>
-	$(document).ready(function() {
-		// đóng máy cắt
-		$(".close-CB-button").on("click", function() {
-			let CBcode = $('#circuit-breaker-modal').attr("data-CB-code")
-			let data = {
-				status: 0,
-				code: CBcode
-			};
-			message = new Paho.MQTT.Message(JSON.stringify(data));
-			message.destinationName = "Received";
-			client.send(message);
-		})
-		//mở máy cắt
-		$(".open-CB-button").on("click", function() {
-			let CBcode = $('#circuit-breaker-modal').attr("data-CB-code")
-			let data = {
-				status: 1,
-				code: CBcode
-			};
-			message = new Paho.MQTT.Message(JSON.stringify(data));
-			message.destinationName = "Received";
-			client.send(message);
-		})
-		// đóng dao cách ly
-		$(".close-DS-button").on("click", function() {
-			let DScode = $('#disconnector-switch-modal').attr("data-DS-code")
-			let data = {
-				status: CLOSE,
-				code: DScode
-			};
-			message = new Paho.MQTT.Message(JSON.stringify(data));
-			message.destinationName = "Received";
-			client.send(message);
-		})
-		//mở dao cách ly
-		$(".open-DS-button").on("click", function() {
-			let DScode = $('#disconnector-switch-modal').attr("data-DS-code")
-			let data = {
-				status: OPEN,
-				code: DScode
-			};
-			message = new Paho.MQTT.Message(JSON.stringify(data));
-			message.destinationName = "Received";
-			client.send(message);
-		})
-
-
-
-		$('.confirm-protection-btn').on('click', function() {
-			pauseAudio();
-			$.modal.close();
-		})
-
-		$(".circuit-breaker-element").on("click", function() {
-			let circuitBreakerId = $(this).attr("id")
-			switch (circuitBreakerId) {
-				case "TBABA_131_CB":
-					check131CircuitBreakerCondition()
-					break;
-				default:
-					break;
-			}
-			$('#circuit-breaker-modal').attr("data-CB-code", circuitBreakerId)
-			$('#circuit-breaker-modal').modal({});
-		});
-
-		$(".disconnectors-switches-element").on("click", function() {
-			let disconnectorSwitchId = $(this).attr("id")
-			switch (disconnectorSwitchId) {
-				case "TBABA_131_3_DS":
-					check131_3DisconnectorSwitchCondition()
-					break;
-				case "TBABA_131_1_DS":
-					check131_1DisconnectorSwitchCondition()
-					break;
-				default:
-					break;
-			}
-			$('#disconnector-switch-modal').attr("data-DS-code", disconnectorSwitchId)
-			$('#disconnector-switch-modal').modal({});
-		});
-
-		$(".earth-breaker-element").on("click", function() {
-			let disconnectorSwitchId = $(this).attr("id")
-			switch (disconnectorSwitchId) {
-				case "TBABA_131_15_EB":
-					check131_15EarthBreakerCondition()
-					break;
-				case "TBABA_131_35_EB":
-					check131_35EarthBreakerCondition()
-					break;
-				case "TBABA_131_38_EB":
-					check131_38EarthBreakerCondition()
-					break;
-				default:
-					break;
-			}
-			$('#earth-breaker-modal').attr("data-EB-code", disconnectorSwitchId)
-			$('#earth-breaker-modal').modal({});
-		});
-	})
-</script>
-
 </html>

@@ -129,25 +129,25 @@
                     <div style="padding-left: 150px;">
                         <div class="station-title" style="width:120px;">NGHĨA ĐÀN</div>
                         <div class="detail-bay-c11">
-                            <div class="busbar-label">C11</div>
+                            <div class="busbar-label">C113232</div>
                             <button class="control-cb-button" data-toggle="modal" data-target="#modal-default"><a href="#ex1" rel="modal:open">Control</a></button>
                             <div class="reveal pd-r-35">
                                 <div class="content" style="min-height: 250px;">
                                     <div class="triangle-up-top"></div>
                                     @include('elements.earth-breaker', [ "data" => [
-                                        'id' => '171-76',
+                                        'id' => 'TBABA_171_76_EB',
                                         'label' => "171-76",
                                         'class' => 'bay-item-first'
                                     ]])
             
                                     @include('elements.disconnectors-switches', [ "data" => [
-                                        'id' => '171-7',
+                                        'id' => 'TBABA_171_7_DS',
                                         'label' => "171-7",
                                         'class' => 'bay-item-second'
                                     ]])
             
                                     @include('elements.earth-breaker', [ "data" => [
-                                        'id' => '171-75',
+                                        'id' => 'TBABA_171_75_EB',
                                         'label' => "171-75",
                                         'class' => 'bay-item-third'
                                     ]])
@@ -159,19 +159,19 @@
                                     ]])
             
                                     @include('elements.earth-breaker', [ "data" => [
-                                        'id' => '171-15',
+                                        'id' => 'TBABA_171_15_EB',
                                         'label' => "171-15",
                                         'class' => 'bay-item-fith'
                                     ]])
             
                                     @include('elements.disconnectors-switches', [ "data" => [
-                                        'id' => '171-1',
+                                        'id' => 'TBABA_171_1_DS',
                                         'label' => "171-1",
                                         'class' => 'bay-item-sixth'
                                     ]])
             
                                     @include('elements.earth-breaker', [ "data" => [
-                                        'id' => '171-14',
+                                        'id' => 'TBABA_171_14_EB',
                                         'label' => "171-14",
                                         'class' => 'bay-item-seven'
                                     ]])
